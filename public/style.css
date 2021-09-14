@@ -1,0 +1,7 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(220, 220, 220);
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
