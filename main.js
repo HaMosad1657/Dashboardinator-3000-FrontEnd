@@ -4,6 +4,29 @@ const url = require('url')
 
 let mainWindow
 
+const WebSocket = require('ws')
+let socket = new WebSocket("ws://localhost:8888");
+
+let gyroVal = 0;
+
+socket.onopen = function(e) {
+ // socket.send("azafsdfsd");
+};
+
+socket.onmessage = function(event) {
+    gyroVal = event.data;
+    //console.log(gyroVal);
+};
+
+socket.onclose = function(event) {
+    console.log("closed")
+};
+
+socket.onerror = function(error) {
+    console.log(error.message);
+};
+
+
 function createWindow() {
     
     mainWindow = new BrowserWindow({
